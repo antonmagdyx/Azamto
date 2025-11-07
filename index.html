@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Azamto Limousine</title>
+
+<style>
+  :root{
+    --accent: rgba(255,255,255,0.15);
+    --accent-hover: rgba(255,255,255,0.3);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+
+body {
+  background: linear-gradient(-45deg,
+    #dba514,
+    #d16ba5,
+    #b26ee5,
+    #6654ff,
+    #4a90e2,
+    #0083b0,
+    #00b4db,
+    #34e89e,
+    #38ef7d,
+    #f7971e,
+    #f5576c,
+    #ec6f66,
+    #fa709a,
+    #a044ff,
+    #6a11cb,
+    #2575fc,
+    #1d2671,
+    #2a5298);
+  background-size: 1000% 1000%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+  @keyframes swell {
+    0%, 100% { transform: translate3d(0,-25px,0); }
+    50% { transform: translate3d(0,5px,0); }
+  }
+
+/* لو عندك أزرار أو روابط */
+a, button, .link {
+  color: #2c3e50; /* لون داكن يناسب الخلفية */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover, button:hover, .link:hover {
+  color: #000;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+.wrap {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 36px 20px 120px;
+
+  /* ظهور متأخر ومتدرج */
+  opacity: 0;
+  transform: translateY(200px);
+  animation: wrapFadeUp 3s ease .25s forwards;
+}
+
+@keyframes wrapFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.8);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  margin: 0 auto 18px;
+  display: block;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);  }
+  50% { transform: translateY(-10px); }
+  
+}
+h1 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00baa4, #ffcb02, #00baa4);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 6s linear infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+  p.bio{margin-bottom:22px;color:rgba(255,255,200,0.9);font-size:14px}
+
+  .links{display:flex;flex-direction:column;gap:12px;align-items:center}
+  .link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #001f3f, #003f5c, #004f6d, #002a38);
+  background-size: 300% 300%;
+  animation: linkGradient 8s ease infinite; /* حركة بسيطة للتدرج */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* تأثير الحركة لتدرج الخلفية */
+@keyframes linkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* عند المرور بالماوس */
+.link:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #f8f4e1, #ffffff, #f8f4e1);
+  background-size: 200% 200%;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+}
+  .icon{width:22px;height:22px;flex:0 0 22px;fill:#fff}
+  .label{flex:1;text-align:center}
+
+  .link.whatsapp .icon {
+  fill: #ffffff; 
+  transition: fill 0.3s ease;
+}
+
+.link.whatsapp:hover .icon {
+  fill: #25D366; 
+}
+
+  .link.instagram .icon {
+  fill: #ffffff; 
+  transition: fill 0.3s ease;
+}
+
+.link.instagram:hover .icon {
+  fill: #ff79d1; 
+}
+
+
+  /* صف الأيقونات السفلية */
+  .social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .social-icons a {
+    color: white;
+    font-size: 22px;
+    transition: 0.3s;
+  }
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #000;
+  }
+
+
+  
+  .social-icon.snapchat .icon {
+  width: 20px;
+  height: 20px;
+  fill: #fff; /* أبيض افتراضيًا مثل باقي الأيقونات */
+  transition: transform 0.3s ease, fill 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon.snapchat:hover .icon {
+  fill: #fffc00; /* لون سناب شات عند الوقوف */
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px #fffc00);
+}
+
+  .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* تحسين المظهر على الموبايل */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px !important; /* بدل 12px */
+  }
+
+  body {
+    zoom: 0.9; /* كانت 0.8 */
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: 92% !important;
+    padding: 14px !important;
+    transform: none !important;
+  }
+
+  h1 {
+    font-size: 1.25rem !important;
+  }
+
+  p.bio {
+    font-size: 0.9rem !important;
+  }
+
+  .link {
+    padding: 10px 16px !important;
+    font-size: 0.95rem !important;
+  }
+
+.page-footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 8px; /* يخليها قريبة من أسفل الصفحة */
+  text-align: center;
+  font-size: 0.6rem; /* ← حجم الخط أصغر هنا */
+  color: #fff;
+  z-index: 100;
+}
+
+.page-footer p {
+  margin: 2px 0; /* يقلل المسافة بين السطرين */
+}
+
+.page-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.6rem; /* ← نفس الحجم للرابط */
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
+}
+}
+body {
+  padding-bottom: 20px; /* مساحة إضافية أسفل الصفحة حتى لا تتغطى الأيقونات */
+}
+	
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <img class="profile-pic" 
+         src="https://ik.imagekit.io/AntonMagdy/Profile%20Pictures/Azamto-.jpg?updatedAt=1762552772607" 
+         alt="Hurghada Activites" />
+    <h1>Azamto Limousine</h1>
+    <p class="bio">Because Every Mile in Hurghada Deserves Luxury</p>
+
+    <nav class="links">
+      <a class="link instagram" href="https://www.instagram.com/kero_said2022/" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zm5.25-2.75a1.125 1.125 0 1 0 1.125 1.125A1.125 1.125 0 0 0 17.25 5.75z" /></svg>
+        <span class="label">Instagram</span>
+      </a>
+		  <a class="link whatsapp" href="https://wa.me/+201210520873" target="_blank">
+	  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp icon" viewBox="0 0 16 16">
+		<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+	  </svg>
+	  <span class="label">WhatsApp</span>
+	</a>
+
+    </nav>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/kero_said2022/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/+201210520873" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</a>
+
+    </div>
+
+    <footer class="page-footer">
+      <p>© 2025 Anton Design</p>
+      <p><a href="https://wa.me/+201281358100" target="_blank">Contact Creator</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
