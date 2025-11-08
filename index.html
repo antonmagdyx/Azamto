@@ -34,6 +34,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -52,6 +53,10 @@ body {
   opacity: 0;
   transform: translateY(50px);
   animation: fadeInUp 1s ease 0.2s forwards;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes fadeInUp {
@@ -171,7 +176,6 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 28px;
-  margin-bottom: 36px;
 }
 
 .social-icons a {
@@ -197,10 +201,24 @@ h1 {
 }
 
 .footer {
+  width: 100%;
   text-align: center;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
+  padding: 24px 20px;
+  margin-top: auto;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.8s forwards;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .footer a {
@@ -243,7 +261,6 @@ h1 {
 
   .social-icons {
     gap: 24px;
-    margin-bottom: 32px;
   }
 
   .social-icons a {
@@ -252,6 +269,7 @@ h1 {
 
   .footer {
     font-size: 0.8rem;
+    padding: 20px 15px;
   }
 }
 
@@ -278,6 +296,10 @@ h1 {
   .icon {
     width: 22px;
     height: 22px;
+  }
+
+  .footer {
+    padding: 18px 15px;
   }
 }
 </style>
@@ -316,14 +338,12 @@ h1 {
       <i class="fab fa-whatsapp"></i>
     </a>
   </div>
-
-  <div <footer class="footer">
-    <p>© 2025 Anton Design</p>
-    <p><a href="https://wa.me/201281358100" target="_blank" rel="noopener">Contact Creator</a></p>
-    </div>
-  </footer>
 </div>
+
+<footer class="footer">
+  <p>© 2025 Anton Design</p>
+  <p><a href="https://wa.me/201281358100" target="_blank" rel="noopener">Contact Creator</a></p>
+</footer>
 
 </body>
 </html>
-
