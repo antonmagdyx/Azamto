@@ -36,8 +36,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px 20px 0;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 15px 20px 0;
+  overflow: hidden;
 }
 
 @keyframes gradient {
@@ -52,7 +54,11 @@ body {
   opacity: 0;
   transform: translateY(50px);
   animation: fadeInUp 1s ease 0.2s forwards;
-  padding: 20px 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fadeInUp {
@@ -63,13 +69,13 @@ body {
 }
 
 .profile-pic {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  margin: 0 auto 24px;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  margin: 0 auto 16px;
   display: block;
   animation: float 6s ease-in-out infinite;
 }
@@ -80,8 +86,8 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
   font-weight: 700;
   background: linear-gradient(90deg, #00baa4, #ffcb02, #00baa4);
   background-size: 200%;
